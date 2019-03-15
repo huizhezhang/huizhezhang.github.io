@@ -1,2 +1,3 @@
 name: Huizhe Zhang
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
