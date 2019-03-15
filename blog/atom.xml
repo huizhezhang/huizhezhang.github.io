@@ -1,0 +1,27 @@
+---
+layout: feed
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Huizhe Zhang's Blog</title>
+	<link href="http://huizhezhang.github.io/blog/atom.xml" rel="self"/>
+	<link href="http://huizhezhang.github.io/blog"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>http://huizhezhang.github.io/blog</id>
+	<author>
+		<name>Huizhe Zhang</name>
+		<email>15320171151915@stu.xmu.edu.cn</email>
+	</author>
+
+	{% for post in site.posts %}
+		<entry>
+			<title>{{ post.title }}</title>
+			<link href="http://huizhezhang.github.io{{ post.url }}"/>
+			<updated>{{ post.date | date_to_xmlschema }}</updated>
+			<id>http://huizhezhang.github.io{{ post.id }}</id>
+			<content type="html">{{ post.content | xml_escape }}</content>
+		</entry>
+	{% endfor %}
+
+</feed>
